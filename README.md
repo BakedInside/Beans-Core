@@ -1,8 +1,6 @@
 Beans Core integration/staging tree
 =====================================
 
-https://beanscore.org
-
 For an immediately usable, binary version of the Beans Core software, see
 https://beanscore.org/en/download/.
 
@@ -10,6 +8,10 @@ Further information about Beans Core is available in the [doc folder](/doc).
 
 What is Beans?
 ----------------
+
+Beans was created under the purpose of 'Fucking Around and Finding Out' or FAFO for short.
+Since the boom of meme currencies, the FAFO cost has increased exponentially
+Beans is committed to FAFO learning as in intro to crypto
 
 Beans is an experimental digital currency that enables instant payments to
 anyone, anywhere in the world. Beans uses peer-to-peer technology to operate
