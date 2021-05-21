@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[beans.qt-translation-022x]
+file_filter = src/qt/locale/beans_<lang>.xlf
+source_file = src/qt/locale/beans_en.xlf
+source_lang = en

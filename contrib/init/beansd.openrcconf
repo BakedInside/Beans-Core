@@ -1,0 +1,33 @@
+# /etc/conf.d/beansd: config file for /etc/init.d/beansd
+
+# Config file location
+#BEANSD_CONFIGFILE="/etc/beans/beans.conf"
+
+# What directory to write pidfile to?  (created and owned by $BEANSD_USER)
+#BEANSD_PIDDIR="/var/run/beansd"
+
+# What filename to give the pidfile
+#BEANSD_PIDFILE="${BEANSD_PIDDIR}/beansd.pid"
+
+# Where to write beansd data (be mindful that the blockchain is large)
+#BEANSD_DATADIR="/var/lib/beansd"
+
+# User and group to own beansd process
+#BEANSD_USER="beans"
+#BEANSD_GROUP="beans"
+
+# Path to beansd executable
+#BEANSD_BIN="/usr/bin/beansd"
+
+# Nice value to run beansd under
+#BEANSD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BEANSD_OPTS=""
+
+# The timeout in seconds OpenRC will wait for beansd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BEANSD_SIGTERM_TIMEOUT=600

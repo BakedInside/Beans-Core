@@ -1,0 +1,6 @@
+22.91.77.222:14455
+
+# manually added 2021-03 for minimal torv3 bootstrap support
+
+# manually added 2021-05 for minimal i2p bootstrap support
+

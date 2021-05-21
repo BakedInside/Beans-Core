@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  beansd The beans core server.
+#
+#
+# chkconfig: 345 80 20
+# description: beansd
+# processname: beansd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/beansd, see below
+if [ -f /etc/sysconfig/beansd ]; then
+        . /etc/sysconfig/beansd
+fi
+
+RETVAL=0
+
+prog=beansd
+# you can override the lockfile via BEANSD_LOCKFILE in /etc/sysconfig/beansd
+lockfile=${BEANSD_LOCKFILE-/var/lock/subsys/beansd}
+
+# beansd defaults to /usr/bin/beansd, override with BEANSD_BIN
+beansd=${BEANSD_BIN-/usr/bin/beansd}
+
+# beansd opts default to -disablewallet, override with BEANSD_OPTS
+beansd_opts=${BEANSD_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $beansd $beansd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog -t600
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
