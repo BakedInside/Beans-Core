@@ -124,6 +124,9 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("beans.mywire.org"); // Server
         vSeeds.emplace_back("beans2.mywire.org"); // Server
+        vSeeds.emplace_back("beans3.mywire.org"); // Server
+        vSeeds.emplace_back("beans4.mywire.org"); // Server
+        vSeeds.emplace_back("beans5.mywire.org"); // Server
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,125);
@@ -143,7 +146,7 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("0x000000002bea1feb844e81ad46cdce168fab0525b77dd6f9f75cf58a22ab27e0")},
+                { 1150, uint256S("0x000000000f52eaa0fad37c1aa662e63e57b08433ffe9abce60e99dc9acd287c0")},
             }
         };
 
